@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/f5645882bfd3e97d6e44cc9f001a3b04
+          gist_title: 16-MPLAB-Servomotor4550.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F4550/16_Servo2.X/main.c
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/7c751b7a1cce1d6eb877aa0766dd3e5a
+          gist_title: 16-MPLAB-Servomotor.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F45K50/16_SERVOMOTOR_POTENCIOMETRO.X/main.c
+          file_encoding: ISO-8859-1
